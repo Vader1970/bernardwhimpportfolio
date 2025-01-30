@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: var(--font-suisse-intl-bold);
+}
+
+h2 {
+  font-family: var(--font-suisse-intl-bold);
+  font-size: large;
+}
+
+p {
+  font-family: var(--font-suisse-screen-regular);
+  color: white;
+}
