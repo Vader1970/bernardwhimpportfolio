@@ -21,3 +21,8 @@ p {
   font-family: var(--font-suisse-screen-regular);
   color: white;
 }
+
+blockquote {
+  font-family: var(--font-suisse-screen-regular);
+  color: white;
+}
