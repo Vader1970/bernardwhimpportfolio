@@ -5,9 +5,11 @@ import { Navbar2 } from "@/components/Navbar2";
 import { Footer4 } from "@/components/Footer4";
 
 export const metadata: Metadata = {
-  title: "Bernard Whimp Portfolio Prototype",
+  title: "Bernard Whimp - Professional Stock Picker",
   description:
-    "Bernard Whimp Portfolio Prototype built with CVI Component Library",
+    "Share market investor and founder of Chance Voight Investment Corporation, Bernard Whimp is redefining the financial landscape with building New Zealand's ASX Hedge Fund",
+  keywords:
+    "Experienced Investor, Investment Opportunities, Investment Seminar, Wealth Management, Investment, Stocks, Shares, Share Market, Entrepreneur, Chance Voight Investment Partners",
 };
 
 export default function RootLayout({
