@@ -20,7 +20,8 @@ type Props = {
   testimonials: Testimonial[];
 };
 
-export type Testimonial5Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Testimonial5Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Testimonial5 = (props: Testimonial5Props) => {
   const { testimonials } = {
@@ -28,17 +29,19 @@ export const Testimonial5 = (props: Testimonial5Props) => {
     ...props,
   };
   return (
-    <section className='bg-[#1f2937] px-4 py-16 text-white md:px-8 md:py-24 lg:py-32'>
-      <div className='container'>
-        <div className='relative grid md:grid-cols-2 md:gap-12 lg:gap-16'>
+    <section className="bg-brand-darkGrey border-b border-white px-4 py-16 text-white md:px-8 md:py-24 lg:py-32">
+      <div className="container">
+        <div className="relative grid md:grid-cols-2 md:gap-12 lg:gap-16">
           {/* Vertical divider for large screens */}
-          <div className='absolute left-1/2 hidden h-full w-px -translate-x-1/2 bg-white lg:block' />
+          <div className="absolute left-1/2 hidden h-full w-px -translate-x-1/2 bg-white lg:block" />
 
           {testimonials.map((testimonial, index) => (
             <div key={index}>
               <Testimonial testimonial={testimonial} />
               {/* Horizontal divider for small screens only */}
-              {index === 0 && <div className='my-8 h-px w-full bg-white md:hidden' />}
+              {index === 0 && (
+                <div className="my-8 h-px w-full bg-white md:hidden" />
+              )}
             </div>
           ))}
         </div>
@@ -48,13 +51,13 @@ export const Testimonial5 = (props: Testimonial5Props) => {
 };
 
 const Testimonial = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className='flex flex-col space-y-6'>
-    <blockquote className='text-2xl font-medium leading-relaxed text-white md:text-3xl lg:text-4xl'>
+  <div className="flex flex-col sm:h-full sm:justify-between space-y-6">
+    <blockquote className="text-lg font-medium leading-relaxed text-white md:text-lg lg:text-2xl">
       {testimonial.quote}
     </blockquote>
-    <div className='flex flex-col space-y-2'>
-      <p className='font-medium text-white'>{testimonial.name}</p>
-      <div className='flex flex-col text-gray-400'>
+    <div className="flex flex-col space-y-2">
+      <p className="font-medium text-white">{testimonial.name}</p>
+      <div className="flex flex-col">
         <p>{testimonial.position}</p>
       </div>
     </div>
