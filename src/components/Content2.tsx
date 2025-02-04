@@ -30,21 +30,22 @@ export const Content2 = (props: Content2Props) => {
       className="bg-brand-lightBlack text-white border-b border-white px-[5%] py-16 md:py-24 lg:py-28"
     >
       <div className="container">
-        <div className="grid grid-cols-1 items-start gap-y-12 lg:grid-cols-2 md:gap-x-12 lg:gap-x-20">
-          <div className="relative h-[400px] w-full lg:h-full lg:min-h-full">
-            <Image
-              src={image.src}
-              alt={image.alt || ""}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="h-full w-full object-cover object-top rounded"
-            />
-          </div>
-          <div>
+        <div className="grid grid-cols-1 items-start gap-y-12 md:grid-cols-1 lg:grid-cols-2 md:gap-x-12 lg:gap-x-20">
+          <div className="order-1 md:order-1 lg:order-2">
             <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
               {heading}
             </h2>
             <div className="prose">{children}</div>
+          </div>
+          <div className="relative h-[400px] w-full lg:h-full lg:min-h-full order-2 md:order-2 lg:order-1">
+            <Image
+              src={image.src}
+              alt={image.alt || ""}
+              fill
+              quality={90}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="h-full w-full object-cover object-top rounded"
+            />
           </div>
         </div>
       </div>
@@ -98,7 +99,8 @@ export const Content2Defaults: Props = {
     </div>
   ),
   image: {
-    src: "/images/bernardGodOfStocks.webp",
+    src: "/images/bernard-god-stocks.webp",
     alt: "Placeholder image",
   },
+
 };

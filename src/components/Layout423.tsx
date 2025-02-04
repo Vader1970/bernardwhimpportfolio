@@ -59,6 +59,7 @@ export const Layout423 = (props: Partial<Layout423Props>) => {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   style={{ objectFit: "cover" }}
                   className="size-full"
+                  unoptimized={feature.image.unoptimized}
                 />
               </div>
               <div className="group relative flex h-full min-h-[70vh] flex-col justify-end p-6 md:p-8">
