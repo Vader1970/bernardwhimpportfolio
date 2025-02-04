@@ -1,6 +1,7 @@
 export interface ImageProps {
     src: string;
     alt?: string;
+    unoptimized?: boolean;
   }
   
   export interface FeatureProps {
@@ -33,6 +34,7 @@ export interface ImageProps {
       image: {
         src: "/videos/bernard-whimp-chance-voight-helicopter.gif",
         alt: "Bernard Whimp in Helicopter",
+        unoptimized: true,
       },
     },
     {
@@ -63,6 +65,7 @@ export interface ImageProps {
       image: {
         src: "/videos/bernard-whimp-black-suit.gif",
         alt: "Bernard Whimp speaking.",
+        unoptimized: true,
       },
     },
   ],

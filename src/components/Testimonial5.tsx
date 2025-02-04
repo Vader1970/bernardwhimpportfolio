@@ -71,7 +71,7 @@ export const Testimonial5Defaults: Props = {
     {
       numberOfStars: 0,
       quote:
-        "I am looking to build on the knowledge and experience I have accumulated to create life changing wealth for investors.",
+        "\"I am looking to build on the knowledge and experience I have accumulated to create life changing wealth for investors.\"",
       avatar: {
         src: "",
         alt: "",
@@ -86,11 +86,12 @@ export const Testimonial5Defaults: Props = {
     {
       numberOfStars: 0,
       quote:
-        "For us stock picking can give us such massive returns we find it hard to imagine why you'd do anything else.",
+        "\"For us stock picking can give us such massive returns we find it hard to imagine why you'd do anything else.\"",
       avatar: {
         src: "",
         alt: "",
       },
+
       name: "Bernard Whimp",
       position: "Chance Voight Investment Corporation\nFounder and CEO/CIO",
       logo: {

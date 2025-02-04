@@ -69,6 +69,7 @@ export const Navbar2 = (props: Navbar2Props) => {
             <button
               className="-mr-2 flex size-12 flex-col items-center justify-center"
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
               <motion.span
                 className="my-[3px] h-0.5 w-6 bg-white"
@@ -104,7 +105,7 @@ export const Navbar2 = (props: Navbar2Props) => {
           className="overflow-hidden px-[5%] text-center lg:flex lg:items-center lg:justify-center lg:px-0 lg:[--height-closed:auto] lg:[--height-open:auto]"
         >
           {navLinks.map((navLink, index) => (
-            <div key={index} className="first:pt-4 lg:first:pt-0">
+            <div key={index} className="first:pt-4 lg:first:pt-0 hover:underline underline-offset-8 transition-colors duration-300">
               {navLink.subMenuLinks && navLink.subMenuLinks.length > 0 ? (
                 <SubMenu navLink={navLink} isMobile={isMobile} />
               ) : (
@@ -151,6 +152,7 @@ const SubMenu = ({
       <button
         className="flex w-full items-center justify-center gap-4 py-3 text-center text-md lg:w-auto lg:flex-none lg:justify-start lg:gap-2 lg:px-4 lg:py-2 lg:text-base"
         onClick={() => setIsDropdownOpen((prev) => !prev)}
+        aria-label={`Toggle submenu for ${navLink.title}`}
       >
         <span>{navLink.title}</span>
         <motion.span
@@ -189,7 +191,7 @@ const SubMenu = ({
               <Link
                 key={index}
                 href={subMenuLink.url}
-                className="block py-3 text-center lg:px-4 lg:py-2 lg:text-left"
+                className="block py-3 text-center lg:px-4 lg:py-2 lg:text-left hover:underline"
               >
                 {subMenuLink.title}
               </Link>

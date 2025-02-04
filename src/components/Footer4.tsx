@@ -7,6 +7,7 @@ import {
   BiLogoLinkedinSquare,
   BiLogoYoutube,
 } from "react-icons/bi";
+import React from "react";
 
 type ImageProps = {
   url?: string;
@@ -23,10 +24,10 @@ type ColumnLinks = {
   links: Links[];
 };
 
-type SocialMediaLinks = {
+interface SocialMediaLinks {
   url: string;
-  icon: React.ReactNode;
-};
+  icon: React.ReactElement;
+}
 
 type FooterLink = {
   title: string;
@@ -77,11 +78,14 @@ export const Footer4 = (props: Footer4Props) => {
             </ul>
           ))}
           <div className="flex items-start justify-start justify-items-center gap-x-3 lg:justify-self-end">
-            {socialMediaLinks.map((link, index) => (
-              <Link key={index} href={link.url}>
-                {link.icon}
-              </Link>
-            ))}
+            {socialMediaLinks.map((link, index) => {
+              const iconType = React.isValidElement(link.icon) ? link.icon.type : 'social media';
+              return (
+                <Link key={index} href={link.url} aria-label={`Link to ${iconType}`}>
+                  {link.icon}
+                </Link>
+              );
+            })}
           </div>
         </div>
         <div className="h-px w-full bg-white" />
@@ -112,11 +116,13 @@ export const Footer4Defaults: Props = {
   columnLinks: [
     {
       links: [
-        { title: "Link One", url: "#" },
-        { title: "Link Two", url: "#" },
-        { title: "Link Three", url: "#" },
-        { title: "Link Four", url: "#" },
+        { title: "Home", url: "#" },
+        { title: "About", url: "#" },
+        { title: "Chance Voight", url: "#" },
+        { title: "Media", url: "#" },
         { title: "Link Five", url: "#" },
+        { title: "Link Six", url: "#" },
+        { title: "Link Seven", url: "#" },
       ],
     },
   ],
